@@ -1,0 +1,242 @@
+
+
+.app-download-banner {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  position: absolute;
+  top: 6rem;
+  left: 2.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .app-download-banner {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 4rem;
+    width: 80%;
+    text-align: center;
+  }
+}
+
+.home-page-background {
+  background-image: url("../../../assets/HomePagebg.jpg");
+  background-size: cover;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column; /* Flex column to ensure content is stacked correctly */
+  justify-content: space-between;
+  min-height: 100vh; /* Use min-height instead of height */
+}
+
+.main-content {
+  width: 100%;
+  padding: 6rem 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.content {
+  background-color: #f2f6f9;
+  border-radius: 1rem;
+  padding: 1.875rem;
+  max-width: 100%; /* Added max-width */
+}
+
+.main-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: #3a4d57;
+  line-height: 1.2;
+}
+
+.sub-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-size: 1.25rem;
+  color: #3a4d57;
+  margin-top: 1.25rem;
+  line-height: 1.6;
+}
+
+.login-button {
+  width: 10rem;
+  background-color: #3a4d57;
+  color: white;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  margin-top: 1.25rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.75rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+}
+
+.login-button:hover {
+  background-color: #5faad2; 
+}
+
+.signup-container{
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+  color: #3a4d57;
+  cursor: pointer;
+  margin-top: 0.625rem;
+  line-height: 1.5;
+}
+.signup-link{
+  padding-left: 4px;
+}
+.signup-link:hover{ 
+  color: #5faad2; 
+}
+
+.signup-link span {
+  font-weight: bold;
+  margin-left: 0.3125rem;
+}
+
+.app-download {
+  width: 100%;
+  padding: 1rem 2.5rem;
+}
+
+.download-card {
+  background-color: #f2f6f9;
+  border-radius: 1rem;
+  padding: 1.875rem;
+}
+
+.download-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #3a4d57;
+}
+
+.download-option {
+  background-color: #3a4d57;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-top: 0.625rem;
+  padding: 0.625rem;
+}
+
+.download-option .logo {
+  width: 1.25rem;
+}
+
+.download-option .store {
+  margin-left: 0.625rem;
+}
+
+.social-media {
+  width: 100%;
+  padding: 1rem 2.5rem;
+}
+
+/* .social-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+} */
+
+.login-signup-form {
+  background-color: rgba(32, 32, 83, 0.9);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.form-container {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 3rem;
+  width: 80%;
+  max-width: 500px;
+}
+
+.close-icon {
+  cursor: pointer;
+  text-align: right;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.875rem;
+}
+
+.tab {
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #3a4d57;
+  padding-bottom: 0.5rem;
+}
+
+.tab.active {
+  color: #3a4d57;
+  border-bottom: 2px solid #3a4d57;
+}
+
+.form-content {
+  overflow-y: auto;
+}
+
+@media (min-width: 600px) {
+  .flex-container {
+    flex-direction: row;
+  }
+
+  .main-content {
+    width: 50%;
+    padding: 6rem 2.5rem;
+  }
+
+  .login-signup-form {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: rgba(32, 32, 83, 0.9);
+  }
+
+  .form-container {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .app-download {
+    width: 50%;
+    padding: 1rem 2.5rem;
+    margin-left: auto;
+  }
+}
