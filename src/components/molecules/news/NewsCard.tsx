@@ -1,5 +1,6 @@
 import React, { useState, ButtonHTMLAttributes } from "react";
 import closeIcon from "../../../assets/close.svg";
+import ImgNotFound from "../../../assets/ImgNotFound.jpg"; // Import placeholder image
 import { NewsItem } from "../../../store/news/types";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -100,7 +101,11 @@ const NewsCard: React.FC<Props> = ({
         </p>
       </div>
       <h1>{newsItem.title}</h1>
-      {newsItem.image_url && <img src={newsItem.image_url} alt="News Image" />}
+      {newsItem.image_url ? (
+        <img src={newsItem.image_url} alt="News Image" />
+      ) : (
+        <img src={ImgNotFound} alt="Image Not Found" />
+      )}
       <div
         className={`published-date ${
           formatDate(newsItem.pubDate, newsItem.language).positionClass
