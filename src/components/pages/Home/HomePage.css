@@ -30,9 +30,9 @@
 
 .flex-container {
   display: flex;
-  flex-direction: column; /* Flex column to ensure content is stacked correctly */
+  flex-direction: column; 
   justify-content: space-between;
-  min-height: 100vh; /* Use min-height instead of height */
+  min-height: 100vh; 
 }
 
 .main-content {
@@ -44,10 +44,10 @@
 }
 
 .content {
-  background-color: #f2f6f9;
-  border-radius: 1rem;
+  background-color: #0e2e47;
+
   padding: 1.875rem;
-  max-width: 100%; /* Added max-width */
+  max-width: 100%;
 }
 
 .main-title {
