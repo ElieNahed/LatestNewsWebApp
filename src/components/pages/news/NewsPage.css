@@ -50,6 +50,9 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.navigation button:hover{
+background-color: #4f83bb;
+}
 
 .navigation button:disabled {
   background-color: #ccc;
@@ -87,13 +90,13 @@
 }
 
 .visit-website-btn:hover {
-  background-color: #45a049;
+  background-color: #347a36;
 }
 
 .details-btn {
   position: absolute;
   top: 10px;
-  background-color: #007bff;
+  background-color:#3a4d57;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -103,7 +106,7 @@
 }
 
 .details-btn:hover {
-  background-color: #0056b3;
+  background-color: #5faad2;
 }
 
 .details-btn.left {
