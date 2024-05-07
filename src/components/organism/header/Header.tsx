@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../store/user/userSlice";
 import Animation from "../../atoms/animation/animation";
 import "./Header.css";
 
 const Header: React.FC = () => {
-  const [language, setLanguage] = useState<string>("English");
   const accessToken = useSelector((state: any) => state.user.accessToken);
   const dispatch = useDispatch();
   const currentDate = new Date().toLocaleDateString("en-US", {
