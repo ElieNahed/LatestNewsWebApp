@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../animation/animation.css";
 
 interface AnimationProps {
   text: string;
