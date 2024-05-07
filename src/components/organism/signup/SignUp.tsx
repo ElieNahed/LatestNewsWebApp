@@ -20,6 +20,7 @@ const SignupComponent: React.FC<SignupComponentProps> = ({
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isSignUpHovered, setIsSignUpHovered] = useState(false);
   const [isLoginHovered, setIsLoginHovered] = useState(false);
+  const [passwordMismatch, setPasswordMismatch] = useState(false); // New state variable for password mismatch
 
   const loading = useSelector((state: any) => state.user.loading);
   const signupError = useSelector((state: any) => state.user.error);
@@ -36,19 +37,21 @@ const SignupComponent: React.FC<SignupComponentProps> = ({
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     setConfirmPassword(event.target.value);
+    setPasswordMismatch(event.target.value !== password); // Check if confirm password matches password
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Add your signup logic here
+
     console.log("Email:", email);
     console.log("Password:", password);
     console.log("Confirm Password:", confirmPassword);
-    // After successful signup, navigate to login
+
     if (password === confirmPassword) {
       handleSignup(email, password, "30m");
+    } else {
+      setPasswordMismatch(true); // Set password mismatch error
     }
-    // handle not equal
   };
 
   const handleSignUpMouseEnter = () => {
@@ -93,6 +96,10 @@ const SignupComponent: React.FC<SignupComponentProps> = ({
         className="border rounded-lg px-3 py-2 my-2 w-full"
         required
       />
+      {passwordMismatch && (
+        <p className="error-message">Passwords do not match.</p>
+      )}{" "}
+      {/* Render error message if passwords don't match */}
       {signupError && <p className="error-message">{signupError}</p>}
       <button
         type="submit"

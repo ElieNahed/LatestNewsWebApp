@@ -5,8 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../../store/store";
 import { getNews } from "../../../store/news/newsSlice";
 import NewsCard from "../../molecules/news/NewsCard";
-// import ButtonIcon from "../../atoms/buttons/ButtonIcon"; // Import ButtonIcon component
-// import profileIcon from "../../../assets/profile.svg"; // Import profile SVG
 
 import "./NewsPage.css";
 
@@ -38,7 +36,7 @@ const NewsPage: React.FC = () => {
   return (
     <div>
       <Header />
-      {/* Display profile SVG using ButtonIcon component
+      {/* 
       <ButtonIcon
         icon={profileIcon}
         clickListener={() => {}}

@@ -53,13 +53,13 @@
 .date {
   font-size: 18px;
   font-weight: bold;
-  color: #ffcc00; /* Yellow color for date */
+  color: #ffcc00;
 }
 
 .time {
   font-size: 14px;
   font-family: 'Courier New', Courier, monospace;
-  color: #00ccff; /* Blue color for time */
+  color: #00ccff;
 }
 
 @media (max-width: 768px) {

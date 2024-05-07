@@ -23,7 +23,7 @@ const Animation: React.FC<AnimationProps> = ({
           setTimeout(() => {
             setIsDeleting(false);
             setLoopNum((prevLoopNum) => (prevLoopNum + 1) % 2);
-          }, 5000); // Increase the timeout to slow down the animation (e.g., 5000 milliseconds = 5 seconds)
+          }, 5000);
         } else {
           setTypedText((prevText) => {
             return currentPhrase.substring(0, prevText.length + 1);
@@ -41,7 +41,7 @@ const Animation: React.FC<AnimationProps> = ({
       }
     };
 
-    const typingTimeout = setTimeout(handleTyping, 100); // Adjust the timeout to control the typing speed
+    const typingTimeout = setTimeout(handleTyping, 100);
     return () => clearTimeout(typingTimeout);
   }, [typedText, loopNum, isDeleting, text]);
 

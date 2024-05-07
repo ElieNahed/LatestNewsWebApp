@@ -6,7 +6,7 @@ interface ButtonIconProps {
   className?: string;
   clickListener: () => void;
   logoClassName?: string;
-  style?: React.CSSProperties; // Add this line
+  style?: React.CSSProperties;
 }
 
 const ButtonIcon: React.FC<ButtonIconProps> = ({

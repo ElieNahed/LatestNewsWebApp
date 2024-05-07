@@ -5,7 +5,7 @@ import Animation from "../../atoms/animation/animation";
 import "./Header.css";
 
 const Header: React.FC = () => {
-  const [language, setLanguage] = useState<string>("English"); // Default language
+  const [language, setLanguage] = useState<string>("English");
   const accessToken = useSelector((state: any) => state.user.accessToken);
   const dispatch = useDispatch();
   const currentDate = new Date().toLocaleDateString("en-US", {
@@ -13,21 +13,18 @@ const Header: React.FC = () => {
     year: "numeric",
     month: "long",
     day: "numeric",
-    timeZone: "Asia/Beirut", // Change to your desired location
+    timeZone: "Asia/Beirut",
   });
 
   const currentTime = new Date().toLocaleTimeString("en-US", {
     hour: "2-digit",
     minute: "2-digit",
     hour12: true,
-    timeZone: "Asia/Beirut", // Change to your desired location
+    timeZone: "Asia/Beirut",
   });
 
-  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setLanguage(e.target.value);
-  };
   const handleLogout = () => {
-    dispatch(logout() as any); // This is a workaround, better approach suggested below
+    dispatch(logout() as any);
   };
 
   return (

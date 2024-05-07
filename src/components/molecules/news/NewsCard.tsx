@@ -1,6 +1,6 @@
-import React, { useState, ButtonHTMLAttributes } from "react";
+import React, { useState, useMemo, ButtonHTMLAttributes } from "react";
 import closeIcon from "../../../assets/close.svg";
-import ImgNotFound from "../../../assets/ImgNotFound.jpg"; // Import placeholder image
+import ImgNotFound from "../../../assets/ImgNotFound.jpg";
 import { NewsItem } from "../../../store/news/types";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -23,41 +23,43 @@ const NewsCard: React.FC<Props> = ({
     setShowDetails(false);
   };
 
-  const formatDate = (date: string, language: string) => {
-    const today = new Date();
-    const pubDate = new Date(date);
-    const diffTime = Math.abs(today.getTime() - pubDate.getTime());
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  const formatDate = useMemo(() => {
+    return (date: string, language: string) => {
+      const today = new Date();
+      const pubDate = new Date(date);
+      const diffTime = Math.abs(today.getTime() - pubDate.getTime());
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-    const options: Intl.DateTimeFormatOptions = {
-      month: "long",
-      day: "numeric",
+      const options: Intl.DateTimeFormatOptions = {
+        month: "long",
+        day: "numeric",
+      };
+      const pubMonthDay = new Intl.DateTimeFormat("en-US", options).format(
+        pubDate
+      );
+      if (diffDays === 0) {
+        return {
+          date: "Today",
+          positionClass: language === "arabic" ? "left" : "right",
+        };
+      } else if (diffDays === 1) {
+        return {
+          date: "Yesterday",
+          positionClass: language === "arabic" ? "left" : "right",
+        };
+      } else if (diffDays <= 30) {
+        return {
+          date: `Last month (${pubMonthDay})`,
+          positionClass: language === "arabic" ? "left" : "right",
+        };
+      } else {
+        return {
+          date: `${diffDays} days ago`,
+          positionClass: language === "arabic" ? "left" : "right",
+        };
+      }
     };
-    const pubMonthDay = new Intl.DateTimeFormat("en-US", options).format(
-      pubDate
-    );
-    if (diffDays === 0) {
-      return {
-        date: "Today",
-        positionClass: language === "arabic" ? "left" : "right",
-      };
-    } else if (diffDays === 1) {
-      return {
-        date: "Yesterday",
-        positionClass: language === "arabic" ? "left" : "right",
-      };
-    } else if (diffDays <= 30) {
-      return {
-        date: `Last month (${pubMonthDay})`,
-        positionClass: language === "arabic" ? "left" : "right",
-      };
-    } else {
-      return {
-        date: `${diffDays} days ago`,
-        positionClass: language === "arabic" ? "left" : "right",
-      };
-    }
-  };
+  }, []);
 
   return (
     <div

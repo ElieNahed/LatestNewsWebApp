@@ -29,7 +29,7 @@ const Login: React.FC<LoginProps> = ({ handleLogin, handleSignupClick }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Add your login logic here
+
     handleLogin(email, password, "30m");
   };
 
